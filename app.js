@@ -21,7 +21,7 @@ connection.connect(function (err) {
     startingScreen();
 })
 
-// Ask the user initial action question to figure out what they would like to do.
+// Starting page code .
 const startingScreen = async () => {
     try {
         let answer = await inquirer.prompt({
@@ -77,3 +77,21 @@ const startingScreen = async () => {
         startingScreen();
     };
 }
+
+
+// view all of the employees code.
+const employeeView = async () => {
+    console.log('Employee View');
+    try {
+        let query = 'SELECT * FROM employee';
+        connection.query(query, function (err, res) {
+            if (err) throw err;
+            let employeeArray = [];
+            res.forEach(employee => employeeArray.push(employee));
+            console.table(employeeArray);
+            initialAction();
+        });
+    } catch (err) {
+        console.log(err);
+        initialAction();
+    };
