@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/MichaelPappas2662/Employee-Tracker#readme",
   "dependencies": {
+    "asciiart-logo": "^0.2.6",
     "console.table": "^0.10.0",
     "express": "^4.17.1",
     "inquirer": "^8.0.0",
