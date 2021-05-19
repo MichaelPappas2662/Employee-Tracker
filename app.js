@@ -2,6 +2,7 @@ const mysql = require("mysql");
 const inquirer = require("inquirer");
 const consoleTable = require("console.table");
 const promiseMySql = require("promise-mysql");
+const util = require("util");
 
 // Create the connection to MySQL WorkBench
 let connection = mysql.createConnection({
