@@ -28,7 +28,7 @@ console.log(logo({
    
 
 
-// connection.query = util.promisify(connection.query);
+connection.query = util.promisify(connection.query);
 // Begin the application after establishing the connection.
 connection.connect(function (err) {
     if (err) throw err;
