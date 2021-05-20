@@ -1,6 +1,7 @@
-
+const connection = require('./lib/config/connection');
 const consoleTable = require('console.table');
 const startApp = require("./lib/start");
+const util = require('util');
 
 //Logo 
 const logo = require('asciiart-logo');
@@ -24,6 +25,12 @@ console.log(logo({
     .center(longText)
     .render());
 
+   
 
 
-startApp();
+// connection.query = util.promisify(connection.query);
+// Begin the application after establishing the connection.
+connection.connect(function (err) {
+    if (err) throw err;
+    startApp();
+})
