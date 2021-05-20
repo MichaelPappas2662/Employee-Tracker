@@ -39,8 +39,8 @@ let connection = mysql.createConnection({
     host: 'localhost',
     port: 3306,
     user: 'root',
-    password: '',
-    database: 'employee_DB'
+    password: 'p9$p$NE$AGGvFc53yfFW',
+    database: 'employees_DB'
 });
 
 connection.query = util.promisify(connection.query);
@@ -83,15 +83,15 @@ const startingScreen = async () => {
                 break;
 
             case 'Add Employees':
-                employeeAdd();
+                employeeCreate();
                 break
 
             case 'Add Departments':
-                departmentAdd();
+                departmentCreate();
                 break
 
             case 'Add Roles':
-                roleAdd();
+                roleCreate();
                 break
 
             case 'Update Employee Role':
@@ -119,7 +119,7 @@ const employeeView = async () => {
             let employeeArray = [];
             res.forEach(employee => employeeArray.push(employee));
             console.table(employeeArray);
-            initialAction();
+            startingScreen();
         });
     } catch (err) {
         console.log(err);
@@ -163,7 +163,7 @@ const roleView = async () => {
 }
 
 // Add a new employee code
-const employeeAdd = async () => {
+const employeeCreate = async () => {
     try {
         console.log('Employee Add');
 
@@ -223,7 +223,7 @@ const employeeAdd = async () => {
 }
 
 // Add a new role code.
-const roleAdd = async () => {
+const roleCreate = async () => {
     try {
         console.log('Role Add');
 
@@ -275,7 +275,7 @@ const roleAdd = async () => {
 }
 
 // Add a new department code.
-const departmentAdd = async () => {
+const departmentCreate = async () => {
     try {
         console.log('Department Add');
 
@@ -340,10 +340,10 @@ const employeeUpdate = async () => {
         let result = await connection.query("UPDATE employee SET ? WHERE ?", [{ role_id: roleSelection.role }, { id: employeeSelection.employee }]);
 
         console.log(`The role was successfully updated.\n`);
-        initialAction();
+        startingScreen();
 
     } catch (err) {
         console.log(err);
-        initialAction();
+        startingScreen();
     };
 }
