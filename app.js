@@ -119,13 +119,12 @@ const employeeView = async () => {
             let employeeArray = [];
             res.forEach(employee => employeeArray.push(employee));
             console.table(employeeArray);
-            startingScreen();
         });
     } catch (err) {
         console.log(err);
         startingScreen();
-    };
-}
+    }startingScreen();
+};
 
 // View all of the departments code.
 const departmentView = async () => {
@@ -137,13 +136,13 @@ const departmentView = async () => {
             let departmentArray = [];
             res.forEach(department => departmentArray.push(department));
             console.table(departmentArray);
-            startingScreen();
         });
     } catch (err) {
         console.log(err);
         startingScreen();
-    };
-}
+    }startingScreen();
+};
+
 // View all of the roles code.
 const roleView = async () => {
     console.log('Role View');
@@ -154,13 +153,13 @@ const roleView = async () => {
             let roleArray = [];
             res.forEach(role => roleArray.push(role));
             console.table(roleArray);
-            startingScreen();
+            
         });
     } catch (err) {
         console.log(err);
         startingScreen();
-    };
-}
+    }startingScreen();
+};
 
 // Add a new employee code
 const employeeCreate = async () => {
@@ -214,13 +213,12 @@ const employeeCreate = async () => {
         });
 
         console.log(`${answer.firstName} ${answer.lastName} added successfully.\n`);
-        startingScreen();
 
     } catch (err) {
         console.log(err);
         startingScreen();
-    };
-}
+    }startingScreen();
+};
 
 // Add a new role code.
 const roleCreate = async () => {
@@ -266,13 +264,13 @@ const roleCreate = async () => {
         })
 
         console.log(`${answer.title} role added successfully.\n`)
-        startingScreen();
+        
 
     } catch (err) {
         console.log(err);
         startingScreen();
-    };
-}
+    }startingScreen();
+};
 
 // Add a new department code.
 const departmentCreate = async () => {
@@ -290,15 +288,12 @@ const departmentCreate = async () => {
         let result = await connection.query("INSERT INTO department SET ?", {
             department_name: answer.deptName
         });
-
         console.log(`${answer.deptName} added successfully to departments.\n`)
-        startingScreen();
-
     } catch (err) {
         console.log(err);
         startingScreen();
-    };
-}
+    }startingScreen();
+};
 
 // Update a role for a specific employee code.
 const employeeUpdate = async () => {
@@ -322,7 +317,6 @@ const employeeUpdate = async () => {
         ]);
 
         let roles = await connection.query("SELECT * FROM role");
-
         let roleSelection = await inquirer.prompt([
             {
                 name: 'role',
@@ -336,14 +330,11 @@ const employeeUpdate = async () => {
                 message: 'Please select the role to update the employee with.'
             }
         ]);
-
         let result = await connection.query("UPDATE employee SET ? WHERE ?", [{ role_id: roleSelection.role }, { id: employeeSelection.employee }]);
-
         console.log(`The role was successfully updated.\n`);
-        startingScreen();
 
     } catch (err) {
         console.log(err);
         startingScreen();
-    };
-}
+    }startingScreen();
+};
