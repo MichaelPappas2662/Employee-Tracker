@@ -1,8 +1,25 @@
 const mysql = require("mysql");
 const inquirer = require("inquirer");
 const consoleTable = require("console.table");
-// const promiseMySql = require("promise-mysql");
 const util = require("util");
+
+
+// Create the connection to MySQL WorkBench
+let connection = mysql.createConnection({
+    host: 'localhost',
+    port: 3306,
+    user: 'root',
+    password: 'p9$p$NE$AGGvFc53yfFW',
+    database: 'employees_DB'
+});
+
+connection.query = util.promisify(connection.query);
+
+// Begin the application after establishing the connection.
+connection.connect(function (err) {
+    if (err) throw err;
+    startingScreen();
+})
 
 //Logo 
 const logo = require('asciiart-logo');
@@ -25,23 +42,6 @@ console.log(logo({
     .emptyLine()
     .center(longText)
     .render());
-
-// Create the connection to MySQL WorkBench
-let connection = mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    password: 'p9$p$NE$AGGvFc53yfFW',
-    database: 'employees_DB'
-});
-
-connection.query = util.promisify(connection.query);
-
-// Begin the application after establishing the connection.
-connection.connect(function (err) {
-    if (err) throw err;
-    startingScreen();
-})
 
 // Starting page code .
 const startingScreen = async () => {
