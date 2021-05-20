@@ -7,29 +7,21 @@ const util = require("util");
 //Logo 
 const logo = require('asciiart-logo');
 const config = require('./package.json');
-const longText = 'Lorem ipsum dolor sit amet, ' +
-    'consectetur adipiscing elit, ' +
-    'sed do eiusmod tempor incididunt ut labore et ' +
-    'dolore magna aliqua. Ut enim ad minim veniam, ' +
-    'quis nostrud exercitation ullamco laboris ' +
-    'nisi ut aliquip ex ea commodo consequat. Duis aute ' +
-    'irure dolor in reprehenderit in voluptate velit esse ' +
-    'cillum dolore eu fugiat nulla pariatur. ' +
-    'Excepteur sint occaecat cupidatat non proident, ' +
-    'sunt in culpa qui officia deserunt mollit anim ' +
-    'id est laborum.';
+const longText = 'This is my Employee Tracker app,'+ 
+' click the arrows to navigate to the menu' + 
+' or the numbers 1-6.';
 
 console.log(logo({
-    name: 'Just a simple example',
+    name: 'Employee Tracker',
     font: 'ANSI Shadow',
     lineChars: 10,
     padding: 2,
     margin: 3,
     borderColor: 'grey',
-    logoColor: 'bold-green',
-    textColor: 'green',})
+    logoColor: 'cyan',
+    textColor: 'cyan',})
     .emptyLine()
-    .right('version 3.7.123')
+    .right('version 1.0.123')
     .emptyLine()
     .center(longText)
     .render());
