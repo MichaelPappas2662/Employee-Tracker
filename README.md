@@ -36,6 +36,10 @@ I want to be able to view and manage the departments, roles, and employees in my
 So that I can organize and plan my business
 ```
 
+## App Working Example
+
+![App](./assets/app.gif)
+
 ## Installation
 
 Run:
