@@ -26,9 +26,18 @@
 - [Usage](#Usage)
 - [Licence](#Licence)
 - [Repository Link](#Repository)
-- [GitHub Info](#GitHub) 
+- [GitHub Info](#GitHub)
+
+## Description
+
+```
+As a business owner
+I want to be able to view and manage the departments, roles, and employees in my company
+So that I can organize and plan my business
+```
 
 ## Installation
+
 Run:
 
                 npm i
@@ -37,14 +46,13 @@ Run:
 
 This command-line application allows the user to:
 
-  * Add departments, roles, employees
+- Add departments, roles, employees
 
-  * View departments, roles, employees
+- View departments, roles, employees
 
-  * Update employee roles
+- Update employee roles
 
-  * Update employee managers
-
+- Update employee managers
 
 The application will be invoked with the following command:
 
@@ -59,7 +67,6 @@ The application will be invoked with the following command:
 - [Project Repo](https://github.com/MichaelPappas2662/Employee-Tracker)
 
 ## GitHub
-
 
 - Michael Pappas
 - [GitHub Profile](https://github.com/MichaelPappas2662)
