@@ -40,6 +40,8 @@ So that I can organize and plan my business
 
 ![App](./assets/app.gif)
 
+[Video Link](https://drive.google.com/file/d/1cKd4i37AvIHXjdav7N58wZBysYTe23kQ/view)
+
 ## Installation
 
 Run:
