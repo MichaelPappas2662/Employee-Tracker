@@ -17,3 +17,49 @@
     <img src="https://img.shields.io/badge/-screencastify-lightgrey" />
     <img src="https://img.shields.io/badge/-MySQL-orange" />
 </p>
+
+## Table of contents
+
+- [Description](#Description)
+- [App Working Example](#Description)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Licence](#Licence)
+- [Repository Link](#Repository)
+- [GitHub Info](#GitHub) 
+
+## Installation
+Run:
+
+                npm i
+
+## Usage
+
+This command-line application allows the user to:
+
+  * Add departments, roles, employees
+
+  * View departments, roles, employees
+
+  * Update employee roles
+
+  * Update employee managers
+
+
+The application will be invoked with the following command:
+
+                node app.js
+
+## Licence
+
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+
+## Repository
+
+- [Project Repo](https://github.com/MichaelPappas2662/Employee-Tracker)
+
+## GitHub
+
+
+- Michael Pappas
+- [GitHub Profile](https://github.com/MichaelPappas2662)
