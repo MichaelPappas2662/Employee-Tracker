@@ -28,6 +28,10 @@ CREATE TABLE employee (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(30) NOT NULL,
   last_name VARCHAR(30) NOT NULL,
-  manager_id INT,
+  manager_id INT,  
   role_id INT
 );
+
+CREATE INDEX idx_role_id ON employee (role_id);
+CREATE INDEX idx_manager_id ON employee (manager_id);
+CREATE INDEX idx_department_id ON role (department_id);
